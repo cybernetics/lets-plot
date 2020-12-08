@@ -78,6 +78,7 @@ internal class PlotTooltipHelper {
 
         internal fun findTargets(plotCoord: DoubleVector): List<LookupResult> {
             val targetsPicker = LocatedTargetsPicker().apply {
+                setNeedCheckTooltips(true)
                 maxAllowedDistance?.let(this::updateMaxDistance)
                 for (locator in myTargetLocators) {
                     val result = locator.search(plotCoord)
